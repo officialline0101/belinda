@@ -1796,6 +1796,10 @@
             // 現在の日時を取得
             const now = new Date();
 
+// 6週間後の日時を取得
+const sixWeeksLater = new Date(now);
+sixWeeksLater.setDate(sixWeeksLater.getDate() + (6 * 7)); // 6週間 = 42日
+
             // テーブルの内容を更新
             for (let i = 0; i < 7; i++) {
                 const day = new Date(currentDate);
@@ -1829,6 +1833,14 @@
 
                     // メニュー時間と訪問回数の時間を合計して、終了時間を設定
                     slotEnd.setMinutes(slotStart.getMinutes() + menuDuration + visitDuration + irradiationsDuration);
+
+
+        // 🆕 6週間以降なら✕にする
+        if (slotStart > sixWeeksLater) {
+            cell.textContent = '✕';
+            cell.classList.add('unavailable');
+            continue;
+        }
 
                     // 18時以降に終了する予約を不可にする (火水木金のみ)
                     if ([1, 2, 3, 4, 5, 6].includes(slotEnd.getDay())) { // 火:2, 水:3, 木:4, 金:5
