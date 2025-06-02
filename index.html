@@ -782,34 +782,38 @@
             display: none;
         }
 
-#selected-menus-display {
-  display: none; /* 最初は非表示 */
-  font-weight: bold;
-  margin-top: 12px;
-  padding: 12px 16px;
-  background-color: #f5f5f5;
-  border-left: 4px solid #4caf50;
-  border-radius: 6px;
-  font-size: 16px;
-  color: #333;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  word-break: break-word;
-}
+        #selected-menus-display {
+            display: none;
+            /* 最初は非表示 */
+            font-weight: bold;
+            margin-top: 12px;
+            padding: 12px 16px;
+            background-color: #f5f5f5;
+            border-left: 4px solid #4caf50;
+            border-radius: 6px;
+            font-size: 16px;
+            color: #333;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            word-break: break-word;
+        }
 
-    .info-textopop {
-    width: 100%;
-    margin: 5; /* 左右の余白をなくす */
-    font-size: 13px;
-    color: #000000;
-    line-height: 1.5;
-    text-align: center;
-    word-wrap: break-word;
-    background-color: #eef9f5;
-    padding: 6px;
-    border-radius: 4px;
-    box-sizing: border-box; /* パディングを含めてもはみ出さないように */
-    margin-bottom: 10px; /* 下に10pxの隙間を作る */
-}
+        .info-textopop {
+            width: 100%;
+            margin: 5;
+            /* 左右の余白をなくす */
+            font-size: 13px;
+            color: #000000;
+            line-height: 1.5;
+            text-align: center;
+            word-wrap: break-word;
+            background-color: #eef9f5;
+            padding: 6px;
+            border-radius: 4px;
+            box-sizing: border-box;
+            /* パディングを含めてもはみ出さないように */
+            margin-bottom: 10px;
+            /* 下に10pxの隙間を作る */
+        }
 
         /* 携帯端末向けのレスポンシブデザイン */
         @media (max-width: 768px) {
@@ -912,7 +916,7 @@
                 <div class="info-textopop">【NNOBIRU LASHLIFT(伸びるまつ毛パーマ)2回目以降】<br>2回目以降：8800円</div>
                 <button type="button" onclick="selectSymptom(this)" data-category="まつ毛パーマ" data-price="6600">無添加まつ毛パーマ</button>
                 <div class="info-textopop">【無添加まつ毛パーマ】2回目以降：6600円</div>
-                <button type="button" onclick="selectSymptom(this)" data-category="まつ毛パーマ" data-price="7900">マスカラパーマ</button>
+                <button type="button" onclick="selectSymptom(this)" data-category="まつ毛パーマ"  data-price="7900">マスカラパーマ</button>
                 <div class="info-textopop">【マスカラパーマ】2回目以降：7900円</div>
                 <button type="button" onclick="selectSymptom(this)" data-category="まつ毛パーマ" data-price="7900">ダブルアイリフト</button>
                 <div class="info-textopop">【ダブルアイリフト】2回目以降：7900円</div>
@@ -986,13 +990,13 @@
             <div class="irradiations">
                 <button type="button" id="firstirradiations" onclick="selectirradiations(this)" data-price="1100">パーツWAXおでこ</button>
                 <div class="info-textopop">1100円</div>
-                <button type="button" id="firstirradiations" onclick="selectirradiations(this)" data-price="2000">パーツWAXほほ</button>
+                <button type="button" id="firstirradiations" onclick="selectirradiations(this)"data-price="2000">パーツWAXほほ</button>
                 <div class="info-textopop">2000円</div>
                 <button type="button" id="firstirradiations" onclick="selectirradiations(this)" data-price="1100">パーツWAX鼻</button>
                 <div class="info-textopop">1100円</div>
                 <button type="button" id="firstirradiations" onclick="selectirradiations(this)" data-price="1500">パーツWAX口周りと顎</button>
                 <div class="info-textopop">1500円</div>
-                <button type="button" id="firstirradiations" onclick="selectirradiations(this)" data-price="1200">パーツWAXもみあげ</button>
+                <button type="button" id="firstirradiations" onclick="selectirradiations(this)"data-price="1200">パーツWAXもみあげ</button>
                 <div class="info-textopop">1200円</div>
                 <button type="button" id="firstirradiations" onclick="selectirradiations(this)" data-price="2200">パーツWAXうなじ</button>
                 <div class="info-textopop">2200円</div>
@@ -1366,8 +1370,8 @@
                 selectedMenuTime = 0;
                 selectedSymptom = null;
                 menuPrice = 0;
-        treatmentText.style.display = 'none';
-        return; // ここで処理を終了
+                treatmentText.style.display = 'none';
+                return; // ここで処理を終了
             } else {
                 // 選択された各ボタンについて処理
                 updatedSelectedButtons.forEach((btn) => {
@@ -1550,30 +1554,30 @@
                 document.querySelector('button[onclick="showMenu(\'femalesecond\')"]').style.display = 'inline-block';
             }
 
-    // ▼ 追加：症状・オプション・メニューセクションをリセット
-    document.querySelectorAll('.symptoms button').forEach(btn => btn.classList.remove('active'));
-    document.querySelectorAll('.irradiations button').forEach(btn => btn.classList.remove('active'));
-    document.querySelectorAll('.menu-section').forEach(section => section.classList.remove('active'));
+            // ▼ 追加：症状・オプション・メニューセクションをリセット
+            document.querySelectorAll('.symptoms button').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.irradiations button').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.menu-section').forEach(section => section.classList.remove('active'));
 
-    // ▼ 追加：表示エリアを非表示・リセット
-    document.getElementById("selected-menus-display").style.display = "none";
-    document.getElementById("selected-menus-display").innerHTML = "";
+            // ▼ 追加：表示エリアを非表示・リセット
+            document.getElementById("selected-menus-display").style.display = "none";
+            document.getElementById("selected-menus-display").innerHTML = "";
 
-    // ▼ 状態変数もリセット
-    selectedSymptom = '';
-    irradiationsCount = '';
-    menuPrice = 0;
-    optionsPrice = 0;
-    totalAmount = 0;
+            // ▼ 状態変数もリセット
+            selectedSymptom = '';
+            irradiationsCount = '';
+            menuPrice = 0;
+            optionsPrice = 0;
+            totalAmount = 0;
 
-    // 表示更新
-    updateDisplayInfo();
+            // 表示更新
+            updateDisplayInfo();
 
-    // カレンダーの更新
-    selectedVisitTime = visitTimes[visitCount];
-    console.log('選択された訪問回数の時間:', selectedVisitTime);
-    fetchAvailability(currentDate);
-}
+            // カレンダーの更新
+            selectedVisitTime = visitTimes[visitCount];
+            console.log('選択された訪問回数の時間:', selectedVisitTime);
+            fetchAvailability(currentDate);
+        }
 
         function showMenu(menu) {
             // `treatment-text` を非表示にする
@@ -1749,20 +1753,20 @@
             const table = calendar.querySelector('table tbody'); // カレンダーのテーブル要素を取得
 
             // 表示する時間帯のリスト（09:00から17:00までの15分刻み）
-const times = [
-    '09:00', '09:15', '09:30', '09:45',
-    '10:00', '10:15', '10:30', '10:45',
-    '11:00', '11:15', '11:30', '11:45',
-    '12:00', '12:15', '12:30', '12:45',
-    '13:00', '13:15', '13:30', '13:45',
-    '14:00', '14:15', '14:30', '14:45',
-    '15:00', '15:15', '15:30', '15:45',
-    '16:00', '16:15', '16:30', '16:45',
-    '17:00', '17:15', '17:30', '17:45',
-    '18:00', '18:15', '18:30', '18:45',
-    '19:00', '19:15', '19:30', '19:45',
-    '20:00', '20:15', '20:30', '20:45', '21:00'
-];
+            const times = [
+                '09:00', '09:15', '09:30', '09:45',
+                '10:00', '10:15', '10:30', '10:45',
+                '11:00', '11:15', '11:30', '11:45',
+                '12:00', '12:15', '12:30', '12:45',
+                '13:00', '13:15', '13:30', '13:45',
+                '14:00', '14:15', '14:30', '14:45',
+                '15:00', '15:15', '15:30', '15:45',
+                '16:00', '16:15', '16:30', '16:45',
+                '17:00', '17:15', '17:30', '17:45',
+                '18:00', '18:15', '18:30', '18:45',
+                '19:00', '19:15', '19:30', '19:45',
+                '20:00', '20:15', '20:30', '20:45', '21:00'
+            ];
 
 
             // カレンダーに行がまだない場合、時間ごとに新しい行を作成
@@ -1799,9 +1803,9 @@ const times = [
             // 現在の日時を取得
             const now = new Date();
 
-// 6週間後の日時を取得
-const sixWeeksLater = new Date(now);
-sixWeeksLater.setDate(sixWeeksLater.getDate() + (6 * 7)); // 6週間 = 42日
+            // 6週間後の日時を取得
+            const sixWeeksLater = new Date(now);
+            sixWeeksLater.setDate(sixWeeksLater.getDate() + (6 * 7)); // 6週間 = 42日
 
             // テーブルの内容を更新
             for (let i = 0; i < 7; i++) {
@@ -1828,48 +1832,77 @@ sixWeeksLater.setDate(sixWeeksLater.getDate() + (6 * 7)); // 6週間 = 42日
 
                     const slotStart = new Date(day);
                     slotStart.setHours(parseInt(times[j].split(':')[0]), parseInt(times[j].split(':')[1]), 0, 0);
-
                     const slotEnd = new Date(slotStart);
                     let menuDuration = selectedMenuTime || 10;
                     let visitDuration = selectedVisitTime || 0;
                     let irradiationsDuration = selectedirradiationsTime || 0;
-
-                    // メニュー時間と訪問回数の時間を合計して、終了時間を設定
                     slotEnd.setMinutes(slotStart.getMinutes() + menuDuration + visitDuration + irradiationsDuration);
 
+                    // 営業日イベントに含まれる時間帯かつ他イベントがない場合は◯にする
+                    const forceBusinessEventTime = businessEventTimes.some(event => {
+                        return slotStart >= event.start && slotEnd <= event.end;
+                    });
 
-        // 🆕 6週間以降なら✕にする
-        if (slotStart > sixWeeksLater) {
-            cell.textContent = '✕';
-            cell.classList.add('unavailable');
-            continue;
-        }
+                    const otherEventCount = availability.reduce((acc, slot) => {
+                        const eventStart = new Date(slot.startTime);
+                        const eventEnd = new Date(slot.endTime);
+                        return (slot.title !== "営業日" && eventStart < slotEnd && slotStart < eventEnd) ? acc + 1 : acc;
+                    }, 0);
 
-                    // 18時以降に終了する予約を不可にする (火水木金のみ)
-                    if ([1, 2, 3, 4, 5, 6].includes(slotEnd.getDay())) { // 火:2, 水:3, 木:4, 金:5
-                        if (slotEnd.getHours() === 17 && slotEnd.getMinutes() > 0) {
-                            cell.textContent = '✕';
-                            cell.classList.add('unavailable');
-                            continue;
-                        } else if (slotEnd.getHours() > 17) {
-                            cell.textContent = '✕';
-                            cell.classList.add('unavailable');
-                            continue;
-                        }
+                    if (forceBusinessEventTime && otherEventCount === 0) {
+                        cell.textContent = '◯';
+                        cell.classList.remove('unavailable');
+                        cell.classList.add('available');
+                        cell.setAttribute('data-date', slotStart.toISOString());
+                        continue;
                     }
 
-                    // 18時以降に終了する予約を不可にする (火水木金のみ)
-                    if ([0].includes(slotEnd.getDay())) { // 火:2, 水:3, 木:4, 金:5
-                        if (slotEnd.getHours() === 16 && slotEnd.getMinutes() > 0) {
-                            cell.textContent = '✕';
-                            cell.classList.add('unavailable');
-                            continue;
-                        } else if (slotEnd.getHours() > 16) {
-                            cell.textContent = '✕';
-                            cell.classList.add('unavailable');
-                            continue;
-                        }
+                    // 上記に該当しないが、営業日イベント中に他イベントがある場合は✕
+                    if (forceBusinessEventTime && otherEventCount > 0) {
+                        cell.textContent = '✕';
+                        cell.classList.add('unavailable');
+                        cell.setAttribute('data-date', slotStart.toISOString());
+                        continue;
                     }
+
+                    // 🆕 6週間以降なら✕にする
+                    if (slotStart > sixWeeksLater) {
+                        cell.textContent = '✕';
+                        cell.classList.add('unavailable');
+                        continue;
+                    }
+
+// 17時または21時に終了する予約を不可にする（火水木金土日のみ）
+if ([1, 2, 3, 4, 5, 6].includes(slotEnd.getDay())) { // 火:2, 水:3, 木:4, 金:5, 土:6
+    const endHour = slotEnd.getHours();
+    const endMin = slotEnd.getMinutes();
+
+    if ((endHour === 17 && endMin > 0) || endHour > 17 && endHour < 21) {
+        cell.textContent = '✕';
+        cell.classList.add('unavailable');
+        continue;
+    } else if (endHour === 21 && endMin > 0) {
+        cell.textContent = '✕';
+        cell.classList.add('unavailable');
+        continue;
+    }
+}
+
+// 日曜日だけで16時または21時に終了する予約を不可にする
+if (slotEnd.getDay() === 0) { // 日曜日
+    const endHour = slotEnd.getHours();
+    const endMin = slotEnd.getMinutes();
+
+    if ((endHour === 16 && endMin > 0) || (endHour > 16 && endHour < 21)) {
+        cell.textContent = '✕';
+        cell.classList.add('unavailable');
+        continue;
+    } else if (endHour === 21 && endMin > 0) {
+        cell.textContent = '✕';
+        cell.classList.add('unavailable');
+        continue;
+    }
+}
 
                     // ここで終了時間を使った条件処理を行う
                     // 例えば、リアルタイムで既に過ぎた時間帯は×にする
@@ -1899,11 +1932,16 @@ sixWeeksLater.setDate(sixWeeksLater.getDate() + (6 * 7)); // 6週間 = 42日
                         return acc;
                     }, 0);
 
-                    // 営業日のイベント時間内に他のイベントがある場合
-                    if (isBusinessEventTime && count > 0) {
-                        cell.textContent = '✕';
-                        cell.classList.add('unavailable');
-                    }
+// ★ 毎日17:00～22:00は✕にする
+if (slotStart.getHours() >= 17 && slotStart.getHours() < 22) {
+    cell.textContent = '✕';
+    cell.classList.add('unavailable');
+}
+// 営業日のイベント時間内に他のイベントがある場合
+else if (isBusinessEventTime && count > 0) {
+    cell.textContent = '✕';
+    cell.classList.add('unavailable');
+}
 else if (isBusinessEventTime) {
     // 営業日イベントには収まっていたが、所要時間を変更してはみ出したか？
     const fitsWithinBusinessTime = businessEventTimes.some(event => {
@@ -1914,41 +1952,32 @@ else if (isBusinessEventTime) {
         cell.textContent = '◯';
         cell.classList.add('available');
     } else {
-        // 営業日には含まれていたが、メニューの時間で延びてしまった → もとの状態を保持
-        // 初期状態が '◯' のままなら変更しない
         if (cell.textContent !== '◯') {
             cell.textContent = '✕';
             cell.classList.add('unavailable');
         }
-        // ◯ならそのままにしておく
     }
 }
-                    // 営業日で、指定されている時間以外の時間は×
-                    else if (businessEventTimes.length > 0) {
-                        cell.textContent = '✕';
-                        cell.classList.add('unavailable');
-                    }
-// 日曜日のみ09:00~10:00と16:15~18:00を✕にする
-else if (slotStart.getDay() === 0 && 
-         ((slotStart.getHours() === 9) ||  // 09:00~10:00
-          (slotStart.getHours() === 16 && slotStart.getMinutes() >= 15) || // 16:15~16:59
-          (slotStart.getHours() === 17))) { // 17:00~18:00
+else if (slotStart.getDay() === 0 &&
+    ((slotStart.getHours() === 9) ||
+        (slotStart.getHours() === 16 && slotStart.getMinutes() >= 15) ||
+        (slotStart.getHours() === 17))) {
     cell.textContent = '✕';
     cell.classList.add('unavailable');
 }
-                    // 営業日でかつ他のイベントがない場合
-                    else if (isBusinessDay && count === 0) {
-                        cell.textContent = '◯';
-                        cell.classList.add('available');
-                    }
-                    // それ以外の条件
-                    else if (count <= 0) {
-                        cell.textContent = '◯';
-                        cell.classList.add('available');
-                    } else {
-                        cell.textContent = '✕';
-                        cell.classList.add('unavailable');
-                    }
+else if (isBusinessDay && count === 0) {
+    cell.textContent = '◯';
+    cell.classList.add('available');
+}
+else if (count <= 0) {
+    cell.textContent = '◯';
+    cell.classList.add('available');
+}
+else {
+    cell.textContent = '✕';
+    cell.classList.add('unavailable');
+}
+
 
                     cell.setAttribute('data-date', slotStart.toISOString());
                 }
