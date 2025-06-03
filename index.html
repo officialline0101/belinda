@@ -1803,6 +1803,7 @@
 
             // 現在の日時を取得
             const now = new Date();
+            const oneHourLater = new Date(now.getTime() + 60 * 60 * 1000); // 🆕 追加：現在時刻+1時間
 
             // 6週間後の日時を取得
             const sixWeeksLater = new Date(now);
@@ -1905,13 +1906,13 @@ if (slotEnd.getDay() === 0) { // 日曜日
     }
 }
 
-                    // ここで終了時間を使った条件処理を行う
-                    // 例えば、リアルタイムで既に過ぎた時間帯は×にする
-                    if (slotStart < now) {
-                        cell.textContent = '✕';
-                        cell.classList.add('unavailable');
-                        continue;
-                    }
+// 例えば、リアルタイムで既に過ぎた時間帯（現在時刻 +1時間 より前）は×にする
+const oneHourLater = new Date(now.getTime() + 60 * 60 * 1000);
+if (slotStart < oneHourLater) {
+    cell.textContent = '✕';
+    cell.classList.add('unavailable');
+    continue;
+}
 
                     const isBusinessDay = businessDays.some(businessDay => {
                         const businessDayStart = new Date(businessDay.start);
