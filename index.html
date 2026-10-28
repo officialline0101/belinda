@@ -1234,7 +1234,7 @@
             'まつ毛パーマ': 75,
             '上下まつ毛パーマ': 120,
             'NOBIRU LASH LIFT(伸びるまつ毛パーマ)': 75,
-            'NOBIRU LASHLIFT(伸びるまつ毛パーマ)2回目以降': 75,
+            'NOBIRU LASHLIFT(伸びるまつ毛パーマ)2回目以降': 80,
             '無添加まつ毛パーマ': 80,
             'マスカラパーマ': 80,
             'ダブルアイリフト': 100,
@@ -1247,6 +1247,19 @@
             '無添加まつ毛パーマと眉毛wax': 120,
             'ダブルアイリフトと眉毛wax': 140
         };
+
+        // 2回目以降のお客様はメニュー名が同じでも所要時間が異なるため、こちらを優先する
+        let repeatMenuTimes = {
+            'まつ毛パーマ': 80,
+            'マスカラパーマ': 90
+        };
+
+        function getMenuTime(menuName) {
+            if (visitCount === '2回目以降' && repeatMenuTimes[menuName] !== undefined) {
+                return repeatMenuTimes[menuName];
+            }
+            return menuTimes[menuName] || 0;
+        }
 
         let selectedMenuTime = 0;
 
@@ -1435,7 +1448,7 @@
                     const selectedMenuName = btn.textContent;
                     const category = btn.getAttribute('data-category'); // 追加
                     selectedSymptom.push({ category, name: selectedMenuName }); // ← 変更
-                    selectedMenuTime += menuTimes[selectedMenuName] || 0;
+                    selectedMenuTime += getMenuTime(selectedMenuName);
                     menuPrice += parseInt(btn.getAttribute('data-price'), 10) || 0;
                 });
             }
